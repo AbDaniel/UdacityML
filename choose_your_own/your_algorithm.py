@@ -1,6 +1,9 @@
 #!/usr/bin/python
 
 import matplotlib.pyplot as plt
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
 from prep_terrain_data import makeTerrainData
 from class_vis import prettyPicture
 
@@ -31,9 +34,9 @@ plt.show()
 ### your code here!  name your classifier object clf if you want the 
 ### visualization code (prettyPicture) to show you the decision boundary
 
-
-
-
+clf = KNeighborsClassifier()
+clf.fit(features_train, labels_train)
+print(clf.score(features_test, labels_test))
 
 
 
